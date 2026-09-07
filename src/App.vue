@@ -76,6 +76,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
 
       <nav :class="{ open: menuOpen }" aria-label="Main navigation">
         <button type="button" @click="scrollTo('approach')">Approach</button>
+        <button type="button" @click="scrollTo('about-dale')">Meet Dale</button>
         <button type="button" @click="scrollTo('services')">Services</button>
         <button type="button" @click="scrollTo('membership')">Membership</button>
         <button class="nav-cta" type="button" @click="openBooking">Book a session</button>
@@ -114,7 +115,65 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
           <article><b>03</b><h3>Resolve</h3><p>Leave with less restriction and a clearer path back to activity.</p></article>
         </div>
       </section>
+        <section id="about-dale" class="practitioner section-pad">
+  <div class="practitioner-photo">
+    <img
+      src="/dale-hartung.jpg"
+      alt="Dale Hartung, practitioner at Resolve Performance and Recovery"
+    />
 
+    <div class="photo-label">
+      <strong>Dale Hartung</strong>
+      <span>Resolve Performance &amp; Recovery</span>
+    </div>
+  </div>
+
+  <div class="practitioner-content">
+    <div class="section-kicker">MEET THE PRACTITIONER</div>
+
+    <p class="personal-tagline">
+      Focused hands. Intentional work. Better movement.
+    </p>
+
+    <h2>Meet <span>Dale.</span></h2>
+
+    <div class="bio-copy">
+      <p>
+        I provide focused therapeutic bodywork for athletes, active adults,
+        and anyone experiencing muscular tension, overuse, restricted
+        movement, or difficulty recovering from physical activity.
+      </p>
+
+      <p>
+        My approach begins with a conversation about what is bothering you,
+        how it affects your movement, and what you want to accomplish. I then
+        tailor the session to the problem rather than following a standard
+        routine.
+      </p>
+
+      <p>
+        I specialize in detailed work involving the arms, shoulders, upper
+        back, and neck. I also provide focused lower-body recovery work for
+        the hips, gluteal muscles, quadriceps, hamstrings, and calves.
+      </p>
+
+      <p>
+        My interest in the body extends beyond muscles and movement. I began
+        exploring energy practices in 2007 and have trained in both Reiki and
+        neigong. These practices bring greater attention to breath, stillness,
+        internal awareness, and energetic balance. They may remain a subtle
+        influence or be incorporated more intentionally when requested.
+      </p>
+
+      <p>
+        Whether you are recovering from a demanding workout, managing a
+        persistent trouble spot, or simply trying to feel more capable in your
+        body, my objective is straightforward: better movement, stronger
+        recovery, and meaningful results.
+      </p>
+    </div>
+  </div>
+</section>
       <section class="focus section-pad">
         <div class="focus-heading">
           <div>
