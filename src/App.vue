@@ -180,7 +180,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         I provide focused therapeutic bodywork for athletes, active adults,
         and anyone experiencing muscular tension, overuse, restricted
         movement, or difficulty recovering from physical activity. I primarily work
-        in Waukesa, Wisconsin, but I also provide on-site sessions for local clients in the area.
+        in Waukesha, Wisconsin, but I also provide on-site sessions for local clients in the area.
       </p>
 
       <p>
