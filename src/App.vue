@@ -81,6 +81,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         <button type="button" @click="scrollTo('membership')">Membership</button>
         <button class="nav-cta" type="button" @click="openBooking">Book a session</button>
       </nav>
+      
     </header>
 
     <main id="top">
