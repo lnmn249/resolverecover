@@ -253,6 +253,13 @@ h2 span { color: #7a878c; font-style: italic; }
 .footer-bottom a:hover {
   color: #31d1bd;
 }
+.arrival-note {
+  margin: 2px 0 4px;
+  max-width: 230px;
+  color: #9fabad;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
 
 @media (max-width: 900px) {
   .footer-main {

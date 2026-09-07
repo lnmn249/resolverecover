@@ -334,6 +334,11 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         Waukesha, WI 53186
       </a>
 
+      <p class="arrival-note">
+    Located inside Topaz Apothecary.<br />
+    The entrance may be locked—text when you arrive.
+  </p>
+
       <a href="tel:+12623704314">
         (262) 370-4314
       </a>
