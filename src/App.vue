@@ -140,13 +140,15 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         <div class="approach-grid">
           <h2>Not a standard routine.<br><span>Work built around you.</span></h2>
           <div class="approach-copy">
-            <p>Each session begins with a conversation about what is bothering you, how it affects your movement, and what you want to accomplish.</p>
-            <p>The work is then tailored to the problem, connecting the areas you feel with the muscular patterns that may be contributing to them.</p>
+            <p>Each session begins with a conversation about where you would like the focus to be that day. </p>
+              
+            <p>From there, the work is tailored to what you are noticing and what your body needs rather than limited to a standard routine.</p>
+            
           </div>
         </div>
 
         <div class="process-row">
-          <article><b>01</b><h3>Assess</h3><p>Start with the concern, your movement, and the outcome you want.</p></article>
+          <article><b>01</b><h3>Assess</h3><p>Start with your focus, your movement, and the outcome you want.</p></article>
           <article><b>02</b><h3>Target</h3><p>Focus the session on the primary area and its connected patterns.</p></article>
           <article><b>03</b><h3>Resolve</h3><p>Leave with less restriction and a clearer path back to activity.</p></article>
         </div>
@@ -242,7 +244,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
               type="button"
               @click="openService(service.bookingKey)"
             >
-              Book this service <span>↗</span>
+              Book {{service.name}} <span>↗</span>
             </button>
           </article>
         </div>
@@ -345,13 +347,25 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
       </a>
     </div>
      <a
-  :href="instagramUrl"
+  class="instagram-button"
+  href="https://www.instagram.com/energypathsllc/"
   target="_blank"
   rel="noopener noreferrer"
-  class="instagram-link"
   aria-label="Energy Paths LLC on Instagram"
 >
-  Instagram · @energypathsllc <span>↗</span>
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+    <circle cx="12" cy="12" r="4"></circle>
+    <circle class="instagram-dot" cx="17.5" cy="6.5" r="1"></circle>
+  </svg>
+
+  <span>
+    <small>Follow on Instagram</small>
+    @energypathsllc
+  </span>
 </a>
 
     <div class="footer-action">

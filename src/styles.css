@@ -260,6 +260,56 @@ h2 span { color: #7a878c; font-style: italic; }
   font-size: 0.78rem;
   line-height: 1.6;
 }
+.instagram-button,
+.instagram-button:visited {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(49, 209, 189, 0.35);
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.instagram-button:hover {
+  border-color: #31d1bd;
+  background: rgba(49, 209, 189, 0.08);
+  color: #ffffff;
+}
+
+.instagram-button svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: #31d1bd;
+  stroke-width: 1.6;
+}
+
+.instagram-button .instagram-dot {
+  fill: #31d1bd;
+  stroke: none;
+}
+
+.instagram-button span {
+  display: grid;
+  color: #ffffff;
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.instagram-button small {
+  margin-bottom: 2px;
+  color: #859398;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 
 @media (max-width: 900px) {
   .footer-main {
