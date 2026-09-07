@@ -4,6 +4,8 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 // Replace these two values with the links supplied by MassageBook and your payment provider.
 const bookingUrl = 'https://www.massagebook.com/biz/resolve-performance-and-recovery'
 const paymentUrl = 'https://www.massagebook.com/biz/resolve-performance-and-recovery'
+const membershipUrl =
+  'https://www.massagebook.com/therapists/resolve-performance-and-recovery/deals?src=external'
 
 const menuOpen = ref(false)
 const bookingOpen = ref(false)
@@ -52,6 +54,10 @@ function openBooking() {
 function openPayment() {
   if (paymentUrl) window.open(paymentUrl, '_blank', 'noopener,noreferrer')
   else bookingOpen.value = true
+}
+
+function openMembership() {
+  window.open(membershipUrl, '_blank', 'noopener,noreferrer')
 }
 
 function closeOnEscape(event) {
@@ -213,7 +219,10 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
             <div class="section-kicker light">MONTHLY MAINTENANCE</div>
             <h2>Stay<br><em>Resolved.</em></h2>
             <p>One monthly 60-minute Targeted Resolve session for clients who train regularly, perform physically demanding work, or want to stay ahead of recurring tension.</p>
-            <button class="button outline" type="button" @click="openPayment">Join the membership <span>↗</span></button>
+            <!-- <button class="button outline" type="button" @click="openPayment">Join the membership <span>↗</span></button> -->
+             <button class="button outline" type="button" @click="openMembership">
+  View membership <span>↗</span>
+</button>
           </div>
           <div class="membership-details">
             <div><span>Included monthly</span><strong>1 Targeted Resolve</strong></div>
@@ -233,14 +242,12 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
           <small>Secure scheduling and payment powered by your booking provider.</small>
         </div>
         <div class="embed-shell">
-  <div class="embed-ready">
-    <span class="embed-icon" aria-hidden="true">R</span>
-    <strong>Book your session</strong>
-    <p>View available appointments and reserve your session through our secure booking portal.</p>
-    <button type="button" @click="openBooking">
-      Open booking portal
-    </button>
-  </div>
+  <div class="embed-ready massagebook-embed">
+  <iframe
+    src="https://www.massagebook.com/therapists/resolve-performance-and-recovery/widget/services"
+    title="Book a service with Resolve Performance and Recovery"
+  ></iframe>
+</div>
 </div>
       </section>
     </main>
