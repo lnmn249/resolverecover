@@ -19,7 +19,8 @@ const serviceLinks = {
   membership:
     'https://www.massagebook.com/therapists/resolve-performance-and-recovery/deals?src=external'
 }
-
+const instagramUrl =
+  'https://www.instagram.com/energypathsllc/'
 const menuOpen = ref(false)
 const bookingOpen = ref(false)
 
@@ -31,7 +32,7 @@ const services = [
     name: 'Targeted Resolve',
     time: '60 minutes',
     price: '$100',
-    description: 'Focused work for one primary problem area and the muscular patterns connected to it.',
+    description: 'Focused therapeutic massage for one primary problem area and the muscular patterns connected to it.',
     tags: ['Upper body', 'Lower body', 'Post-workout'],
     bookingKey: 'targeted',
   },
@@ -40,7 +41,7 @@ const services = [
     name: 'Full Resolve',
     time: '90 minutes',
     price: '$150',
-    description: 'A comprehensive session for multiple problem areas or complete athletic recovery.',
+    description: 'Comprehensive therapeutic massage for multiple problem areas or full-body athletic recovery.',
     tags: ['Multiple areas', 'Extended work', 'Full recovery'],
     bookingKey: 'full',
   },
@@ -49,7 +50,7 @@ const services = [
     name: 'Resolve On-Site',
     time: '90 minutes',
     price: '$250',
-    description: 'Professional recovery brought to your home, office, or training location.',
+    description: 'Mobile therapeutic massage and recovery brought to your home, office, or training location in the Waukesha area.',
     tags: ['Local travel', 'Table setup', 'Customized'],
     bookingKey: 'onsite',
   },
@@ -125,7 +126,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         <div class="hero-content">
           <p class="eyebrow"><span></span> Focused therapeutic bodywork</p>
           <h1>Move better.<br><em>Recover stronger.</em></h1>
-          <p class="hero-copy">Targeted work for athletes, active adults, and anyone ready to address muscular tension, overuse, or restricted movement.</p>
+          <p class="hero-copy">Focused therapeutic massage and bodywork in Waukesha, Wisconsin for athletes, active adults, and anyone ready to address muscular tension, overuse, or restricted movement.</p>
           <div class="hero-actions">
             <button class="button primary" type="button" @click="openBooking">Book your session <span>↗</span></button>
             <button class="text-link" type="button" @click="scrollTo('services')">Explore services <span>↓</span></button>
@@ -176,14 +177,14 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
       <p>
         I provide focused therapeutic bodywork for athletes, active adults,
         and anyone experiencing muscular tension, overuse, restricted
-        movement, or difficulty recovering from physical activity.
+        movement, or difficulty recovering from physical activity. I primarily work
+        in Waukesa, Wisconsin, but I also provide on-site sessions for local clients in the area.
       </p>
 
       <p>
-        My approach begins with a conversation about what is bothering you,
-        how it affects your movement, and what you want to accomplish. I then
-        tailor the session to the problem rather than following a standard
-        routine.
+        Each session begins with a conversation about where you would like the focus to be that day. 
+        From there, the work is tailored to what you are noticing and what your body 
+        needs rather than limited to a standard routine.
       </p>
 
       <p>
@@ -343,6 +344,15 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         (262) 370-4314
       </a>
     </div>
+     <a
+  :href="instagramUrl"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="instagram-link"
+  aria-label="Energy Paths LLC on Instagram"
+>
+  Instagram · @energypathsllc <span>↗</span>
+</a>
 
     <div class="footer-action">
       <span>Ready to move better?</span>
