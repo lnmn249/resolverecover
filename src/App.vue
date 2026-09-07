@@ -6,31 +6,52 @@ const bookingUrl = 'https://www.massagebook.com/biz/resolve-performance-and-reco
 const paymentUrl = 'https://www.massagebook.com/biz/resolve-performance-and-recovery'
 const membershipUrl =
   'https://www.massagebook.com/therapists/resolve-performance-and-recovery/deals?src=external'
+const serviceLinks = {
+  targeted:
+    'https://www.massagebook.com/business/39250220/booking/?service_id=2096237&src=external',
+
+  full:
+    'https://www.massagebook.com/business/39250220/booking/?service_id=2096240&src=external',
+
+  onsite:
+    'https://www.massagebook.com/business/39250220/booking/?service_id=2096241&src=external',
+
+  membership:
+    'https://www.massagebook.com/therapists/resolve-performance-and-recovery/deals?src=external'
+}
 
 const menuOpen = ref(false)
 const bookingOpen = ref(false)
+
+const currentYear = new Date().getFullYear()
 
 const services = [
   {
     number: '01',
     name: 'Targeted Resolve',
     time: '60 minutes',
+    price: '$100',
     description: 'Focused work for one primary problem area and the muscular patterns connected to it.',
     tags: ['Upper body', 'Lower body', 'Post-workout'],
+    bookingKey: 'targeted',
   },
   {
     number: '02',
     name: 'Full Resolve',
     time: '90 minutes',
+    price: '$150',
     description: 'A comprehensive session for multiple problem areas or complete athletic recovery.',
     tags: ['Multiple areas', 'Extended work', 'Full recovery'],
+    bookingKey: 'full',
   },
   {
     number: '03',
     name: 'Resolve On-Site',
     time: '90 minutes',
+    price: '$250',
     description: 'Professional recovery brought to your home, office, or training location.',
     tags: ['Local travel', 'Table setup', 'Customized'],
+    bookingKey: 'onsite',
   },
 ]
 
@@ -64,6 +85,13 @@ function closeOnEscape(event) {
   if (event.key === 'Escape') bookingOpen.value = false
 }
 
+function openService(serviceName) {
+  const url = serviceLinks[serviceName]
+
+  if (url) {
+    window.location.href = url
+  }
+}
 onMounted(() => window.addEventListener('keydown', closeOnEscape))
 onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
 </script>
@@ -204,11 +232,17 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         </div>
         <div class="service-grid">
           <article v-for="service in services" :key="service.name" class="service-card">
-            <div class="service-top"><span>{{ service.number }}</span><span>{{ service.time }}</span></div>
+            <div class="service-top"><span>{{ service.number }}</span><span>{{ service.time }} · {{ service.price }}</span></div>
             <h3>{{ service.name }}</h3>
             <p>{{ service.description }}</p>
             <div class="tags"><span v-for="tag in service.tags" :key="tag">{{ tag }}</span></div>
-            <button type="button" @click="openBooking">Book this service <span>↗</span></button>
+            <button
+              class="service-link"
+              type="button"
+              @click="openService(service.bookingKey)"
+            >
+              Book this service <span>↗</span>
+            </button>
           </article>
         </div>
       </section>
@@ -220,11 +254,16 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
             <h2>Stay<br><em>Resolved.</em></h2>
             <p>One monthly 60-minute Targeted Resolve session for clients who train regularly, perform physically demanding work, or want to stay ahead of recurring tension.</p>
             <!-- <button class="button outline" type="button" @click="openPayment">Join the membership <span>↗</span></button> -->
-             <button class="button outline" type="button" @click="openMembership">
-  View membership <span>↗</span>
-</button>
+             <button
+                class="button outline"
+                type="button"
+                @click="openService('membership')"
+              >
+                View membership <span>↗</span>
+              </button>
           </div>
           <div class="membership-details">
+            <div><span>Monthly price</span><strong>$80/month</strong></div>
             <div><span>Included monthly</span><strong>1 Targeted Resolve</strong></div>
             <div><span>Session length</span><strong>60 minutes</strong></div>
             <div><span>Unused session</span><strong>Rolls over 1 month</strong></div>
@@ -252,14 +291,73 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
       </section>
     </main>
 
-    <footer>
-      <a class="brand footer-brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
-        <span><strong>RESOLVE</strong><small>PERFORMANCE &amp; RECOVERY</small></span>
+    <footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a
+        class="footer-logo"
+        href="#top"
+        aria-label="Resolve Performance and Recovery home"
+      >
+        <span class="footer-mark">R</span>
+
+        <span class="footer-name">
+          <strong>RESOLVE</strong>
+          <small>PERFORMANCE &amp; RECOVERY</small>
+        </span>
       </a>
-      <p>Targeted bodywork. Better movement. Stronger recovery.</p>
-      <div><span>resolverecoverywi.com</span><span>Wisconsin</span></div>
-    </footer>
+
+      <p>
+        Targeted bodywork. Better movement.<br />
+        Stronger recovery.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <strong>Explore</strong>
+
+      <a href="#approach">Approach</a>
+      <a href="#about-dale">Meet Dale</a>
+      <a href="#services">Services</a>
+      <a href="#membership">Membership</a>
+    </div>
+
+    <div class="footer-column">
+      <strong>Visit</strong>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=804+N+Grand+Ave%2C+Waukesha%2C+WI+53186"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        804 N Grand Ave<br />
+        Waukesha, WI 53186
+      </a>
+
+      <a href="tel:+12623704314">
+        (262) 370-4314
+      </a>
+    </div>
+
+    <div class="footer-action">
+      <span>Ready to move better?</span>
+
+      <a class="button footer-button" href="#booking">
+        Book a session <span>↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>
+      © {{ currentYear }} Resolve Performance &amp; Recovery
+    </span>
+
+    <a href="https://resolverecoverywi.com">
+      resolverecoverywi.com
+    </a>
+  </div>
+</footer>
 
     <div v-if="bookingOpen" class="modal-backdrop" role="presentation" @click.self="bookingOpen = false">
       <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
