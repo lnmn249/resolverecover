@@ -32,7 +32,7 @@ const services = [
     name: 'Targeted Resolve',
     time: '60 minutes',
     price: '$100',
-    description: 'Focused work for one primary problem area and the muscular patterns connected to it. Friday and Saturday appointments may be available by request. If your preferred time is not shown, join the waitlist and Dale will contact you with available options.',
+    description: 'Focused work for one primary problem area and the muscular patterns connected to it. ',
     tags: ['Upper body', 'Lower body', 'Post-workout'],
     bookingKey: 'targeted',
   },
@@ -41,7 +41,7 @@ const services = [
     name: 'Full Resolve',
     time: '90 minutes',
     price: '$150',
-    description: 'A comprehensive session for multiple problem areas or complete athletic recovery. Friday and Saturday appointments may be available by request. If your preferred time is not shown, join the waitlist and Dale will contact you with available options.',
+    description: 'A comprehensive session for multiple problem areas or complete athletic recovery.',
     tags: ['Multiple areas', 'Extended work', 'Full recovery'],
     bookingKey: 'full',
   },
@@ -50,7 +50,7 @@ const services = [
     name: 'Resolve On-Site',
     time: '90 minutes',
     price: '$250',
-    description: 'Mobile therapeutic massage and recovery brought to your home, office, or training location in the Waukesha area. Add yourself to the waitlist, and Dale will contact you with available appointment options.',
+    description: 'Mobile therapeutic massage and recovery brought to your home, office, or training location in the Waukesha area.',
     tags: ['Local travel', 'Table setup', 'Customized'],
     bookingKey: 'onsite',
   },
@@ -101,7 +101,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Resolve Performance and Recovery home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+        <span class="footer-mark">R</span>
         <span><strong>RESOLVE</strong><small>PERFORMANCE &amp; RECOVERY</small></span>
       </a>
 
@@ -129,24 +129,13 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
           <p class="hero-copy">Focused therapeutic massage and bodywork in Waukesha, Wisconsin for athletes, active adults, and anyone ready to address muscular tension, overuse, or restricted movement.</p>
           <div class="hero-actions">
             <button class="button primary" type="button" @click="openBooking">Book your session <span>↗</span></button>
-            <button class="text-link" type="button" @click="scrollTo('services')">Explore services <span>↓</span></button>
           </div>
         </div>
-        <div class="hero-note"><strong>Specialized focus</strong><span>Arms · Shoulders · Upper back · Neck</span></div>
       </section>
 
       <section id="approach" class="approach section-pad">
         <div class="section-kicker">THE APPROACH</div>
-        <div class="approach-grid">
-          <h2>Not a standard routine.<br><span>Work built around you.</span></h2>
-          <div class="approach-copy">
-            <p>Each session begins with a conversation about where you would like the focus to be that day. </p>
-              
-            <p>From there, the work is tailored to what you are noticing and what your body needs rather than limited to a standard routine.</p>
-            
-          </div>
-        </div>
-
+        <h2 class="approach-title">How each session works.</h2>
         <div class="process-row">
           <article><b>01</b><h3>Assess</h3><p>Start with your focus, your movement, and the outcome you want.</p></article>
           <article><b>02</b><h3>Target</h3><p>Focus the session on the primary area and its connected patterns.</p></article>
@@ -170,46 +159,33 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
     <div class="section-kicker">MEET THE PRACTITIONER</div>
 
     <p class="personal-tagline">
-      Focused hands. Intentional work. Better movement.
+      Target the problem. Resolvethe pattern. Accelerate your recovery.
     </p>
 
     <h2>Meet <span>Dale.</span></h2>
 
     <div class="bio-copy">
-      <p>
-        I provide focused therapeutic bodywork for athletes, active adults,
-        and anyone experiencing muscular tension, overuse, restricted
-        movement, or difficulty recovering from physical activity. I primarily work
-        in Waukesha, Wisconsin, but I also provide on-site sessions for local clients in the area.
-      </p>
+  <p>
+    My work is detail-oriented and guided by careful observation, palpation,
+    and how the body responds throughout the session. I specialize in the
+    arms, shoulders, upper back, and neck, along with focused lower-body work
+    involving the hips, gluteal muscles, quadriceps, hamstrings, and calves.
+  </p>
 
-      <p>
-        Each session begins with a conversation about where you would like the focus to be that day. 
-        From there, the work is tailored to what you are noticing and what your body 
-        needs rather than limited to a standard routine.
-      </p>
+  <p>
+    My interest in the body extends beyond muscles and movement. I began
+    exploring energy practices in 2007 and have trained in both Reiki and
+    neigong. While these practices subtly enhance every session, we can also
+    focus on them intentionally at your request.
+  </p>
 
-      <p>
-        I specialize in detailed work involving the arms, shoulders, upper
-        back, and neck. I also provide focused lower-body recovery work for
-        the hips, gluteal muscles, quadriceps, hamstrings, and calves.
-      </p>
-
-      <p>
-        My interest in the body extends beyond muscles and movement. I began
-        exploring energy practices in 2007 and have trained in both Reiki and
-        neigong. These practices bring greater attention to breath, stillness,
-        internal awareness, and energetic balance. They may remain a subtle
-        influence or be incorporated more intentionally when requested.
-      </p>
-
-      <p>
-        Whether you are recovering from a demanding workout, managing a
-        persistent trouble spot, or simply trying to feel more capable in your
-        body, my objective is straightforward: better movement, stronger
-        recovery, and meaningful results.
-      </p>
-    </div>
+  <p>
+    Whether you are recovering from a demanding workout, managing a persistent
+    trouble spot, or simply trying to feel more capable in your body, my
+    objective is straightforward: better movement, stronger recovery, and
+    meaningful results.
+  </p>
+</div>
   </div>
 </section>
       <section class="focus section-pad">
@@ -231,7 +207,6 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         <div class="section-kicker">SERVICES</div>
         <div class="section-title-row">
           <h2>Choose the time.<br><span>We’ll focus the work.</span></h2>
-          <p>You do not need to choose a technique. Tell me what is happening and what you want to get back to.</p>
         </div>
         <div class="service-grid">
           <article v-for="service in services" :key="service.name" class="service-card">
@@ -248,6 +223,31 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
             </button>
           </article>
         </div>
+                  <div class="booking-logistics">
+            <article>
+              <span>Studio location</span>
+              <h3>Inside Topaz Apothecary</h3>
+              <p>
+                The entrance may be locked. Text when you arrive and I will let you in.
+              </p>
+            </article>
+
+            <article>
+              <span>Appointment options</span>
+              <h3>Flexible scheduling</h3>
+              <p>
+                Friday, Saturday, and Sunday appointments can be arranged directly.
+              </p>
+            </article>
+
+            <article>
+              <span>On-site sessions</span>
+              <h3>Waukesha area</h3>
+              <p>
+                Join the waitlist and I will contact you with available appointment options.
+              </p>
+            </article>
+          </div>
       </section>
 
       <section id="membership" class="membership section-pad">
@@ -269,29 +269,25 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
             <div><span>Monthly price</span><strong>$80/month</strong></div>
             <div><span>Included monthly</span><strong>1 Targeted Resolve</strong></div>
             <div><span>Session length</span><strong>60 minutes</strong></div>
-            <div><span>Unused session</span><strong>Rolls over 1 month</strong></div>
-            <small>Membership renews monthly. Full Resolve and on-site sessions are not included.</small>
+            <div><span>Unused sessions</span><strong>Roll over for 30 days</strong></div>
+            <small>Unused sessions expire after the 30-day rollover period. Membership renewsmonthly. Full Resolve and on-site sessions are not included.</small>
           </div>
         </div>
       </section>
+        <section class="final-cta">
+          <div>
+            <div class="section-kicker light">READY WHEN YOU ARE</div>
+            <h2>Ready to get back to movement?</h2>
+          </div>
 
-      <section id="booking" class="booking section-pad">
-        <div class="booking-copy">
-          <div class="section-kicker">BOOKING &amp; PAYMENT</div>
-          <h2>Ready to get<br><span>back to movement?</span></h2>
-          <p>Choose your session and complete booking and payment securely through the online booking portal.</p>
-          <button class="button primary dark" type="button" @click="openBooking">Open booking portal <span>↗</span></button>
-          <small>Secure scheduling and payment powered by your booking provider.</small>
-        </div>
-        <div class="embed-shell">
-  <div class="embed-ready massagebook-embed">
-  <iframe
-    src="https://www.massagebook.com/therapists/resolve-performance-and-recovery/widget/services"
-    title="Book a service with Resolve Performance and Recovery"
-  ></iframe>
-</div>
-</div>
-      </section>
+          <button
+            class="button outline"
+            type="button"
+            @click="scrollTo('services')"
+          >
+            Choose your session <span>↓</span>
+          </button>
+        </section>
     </main>
 
     <footer class="site-footer">
