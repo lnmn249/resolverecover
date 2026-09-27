@@ -114,6 +114,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         <button type="button" @click="scrollTo('about-dale')">Meet Dale</button>
         <button type="button" @click="scrollTo('services')">Services</button>
         <button type="button" @click="scrollTo('membership')">Membership</button>
+        <button type="button" @click="scrollTo('reviews')">Reviews</button>
         <button class="nav-cta" type="button" @click="openBooking">Book a session</button>
       </nav>
       
@@ -249,7 +250,37 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
             </article>
           </div>
       </section>
+        <section id="reviews" class="reviews section-pad" aria-labelledby="reviews-title">
+  <div class="section-kicker">CLIENT FEEDBACK</div>
+  <div class="section-title-row">
+    <h2 id="reviews-title">
+     <span>Clients share the rest.</span>
+    </h2>
+  </div>
 
+  <p>
+    Read what clients have shared about their sessions at Resolve Performance &amp; Recovery.
+  </p>
+
+  <iframe
+    src="https://www.massagebook.com/therapists/resolve-performance-and-recovery/widget/reviews"
+    title="Resolve Performance and Recovery client reviews on MassageBook"
+    width="100%"
+    height="1000"
+    style="display: block; border: 0; border-radius: 16px; background: #fff;"
+    loading="lazy"
+  ></iframe>
+
+  <a
+    class="button primary dark"
+    style="text-decoration: none;"
+    href="https://www.massagebook.com/therapists/resolve-performance-and-recovery/widget/reviews"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Read all reviews on MassageBook
+  </a>
+</section>
       <section id="membership" class="membership section-pad">
         <div class="membership-card">
           <div class="membership-copy">
